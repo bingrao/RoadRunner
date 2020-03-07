@@ -44,8 +44,7 @@ import rr.state.ShadowThread;
 /** Represents a call to Thread.join by the target program. */
 public class JoinEvent extends Event {
 	
-	/**
-	 * The thread that we are going to join on (that is, wait for).
+	/** The thread that we are going to join on (that is, wait for).
 	 * Note joiningThread.tid could be -1 if this event happens after the tid is reused for a new thread...
 	 */
 	private ShadowThread joiningThread;

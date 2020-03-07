@@ -54,11 +54,6 @@ public class StartEvent extends Event {
 		super(td);
 	}
 
-	/**
-	 * For example:
-	 * Start(0, 1) means: In the thread(tid = 0) start the new thread(tid = 1)
-	 *
-	 */
 	@Override
 	public String toString() {
 		return String.format("Start(%d,%d)", getThread().getTid(),  getNewThread().getTid());
