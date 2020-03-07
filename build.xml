@@ -175,6 +175,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</target>
 
 
+	<target name="test" depends="compile">
+		<mkdir dir="${jar.dir}" />
+		<mkdir dir="${bin.dir}" />
+		<jar destfile="${jar.dir}/test.jar" includes="test/**" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Premain-Class" value="test.single.Test" />
+			</manifest>
+		</jar>
+	</target>
+
 	<target name="javadoc">
 		<!-- Starting with Java8 Javadoc checks for valid html. We disable it only for Java8 because older verions doesn't know the property -->
 		<condition property="javadoc.additionalparams" value="-Xdoclint:none">
@@ -207,6 +217,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<jar destfile="${jar.dir}/ClassLoaderWithListener.jar" basedir="${classes.dir}"/>
 	</target>
 
-	<target name="clean-build" depends="clean,wc,compile,jar,agent,javadoc" />
+	<target name="clean-build" depends="clean,wc,compile,jar,agent,test,javadoc" />
 
 </project>

@@ -1,1 +1,0 @@
-rrrun -classpath=original.jar -benchmark=20 -logs=/home/bing/workspace/RoadRunner/benchmarks/log -xml=Base-moldyn.out -noinst -quiet -maxWarn=1 RRBench 4
