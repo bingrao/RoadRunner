@@ -1,4 +1,4 @@
-package test.single;
+package test;
 
 public class Test extends Thread{
 

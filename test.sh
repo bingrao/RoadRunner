@@ -4,7 +4,7 @@ PROJECT_PATH=`pwd`
 BUILD_PATH=${PROJECT_PATH}/build
 LOG_File=${PROJECT_PATH}/log/log.txt
 
-TARGET="test.single.Test"
+TARGET="test.Test"
 TOOL="PE"
 
 if [ ! $# -eq 0 ]
