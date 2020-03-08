@@ -41,15 +41,13 @@ export JAVA_HOME=/opt/java
 # the total machine memory
 #GIGS=`system_profiler SPHardwareDataType | grep Memory | cut -f2 -d: | cut -f1 -dG | sed -e "s/ //'
 GIGS=10
-
-export JVM_ARGS="-Xmx${GIGS}g -Xms1g"
-
-
-export PATH=${PATH}:`pwd`/auto/bin:`pwd`/bin
-
 export RR_MODE=FAST
-export RR_HOME=`pwd`
-export RR_TOOLPATH=`pwd`/classes/rr/simple:`pwd`/classes/tools
+export RR_HOME=/home/bing/workspace/RoadRunner
+export RR_TOOLPATH=${RR_HOME}/classes/rr/simple:${RR_HOME}/classes/tools
+export JVM_ARGS="-Xmx${GIGS}g -Xms1g"
+export PATH=${PATH}:${RR_HOME}/auto/bin:${RR_HOME}/bin
+
+
 
 echo "RR Setup"
 echo "================================================"
@@ -62,7 +60,7 @@ echo "RR_TOOLPATH =  " $RR_TOOLPATH
 echo
 echo "================================================"
 
-
+cd $RR_HOME
 echo "Available Processors"
 echo "================================================"
 echo ""
@@ -71,3 +69,4 @@ export AVAIL_PROCS=`java test/Proc`
 echo "Runtime.getRuntime().availableProcessors() returned ${AVAIL_PROCS}"
 echo ""
 echo "================================================"
+cd -

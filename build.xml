@@ -34,7 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 
-<project name="RoadRunner" basedir="." default="clean-build">
+<project name="RoadRunner" basedir="." default="build">
 
 	<dirname property="rr.basedir" file="${ant.file.RoadRunner}" />
 
@@ -218,5 +218,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</target>
 
 	<target name="clean-build" depends="clean,wc,compile,jar,agent,test,javadoc" />
+	<target name="build" depends="compile,jar,agent,test" />
 
 </project>
