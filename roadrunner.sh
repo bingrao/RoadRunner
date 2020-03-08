@@ -15,7 +15,7 @@ APP_HOME=`pwd`
 APP_JAR=${APP_HOME}/build/jar/test.jar
 APP_CLASS="test.Test"
 APP_ARGS=
-RR_TOOL="PE"
+RR_TOOL="P"
 RR_ARGS=" -classpath=${APP_JAR} -tool=${RR_TOOL} -maxTid=$[AVAIL_PROCS + 10]"
 
 LOG_FILE=${APP_HOME}/log/log.txt

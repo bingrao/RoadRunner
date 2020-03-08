@@ -19,6 +19,6 @@ Where **test/Test.java** is the relative directory path and testing java file
 ```
 # rrrun -classpath=./classes -tool=PE test.Test
 or 
-# rrrun -classpath=./build/jar/test.jar -tool=PE test.Test
+# rrrun -classpath=./build/jar/test.jar -tool=DT test.Test
 ```
 where **test.single.Test** is the class name with pacakge index

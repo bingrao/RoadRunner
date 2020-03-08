@@ -55,8 +55,8 @@ import rr.tool.Tool;
  * Print a human readable event stream.
  */
 
-@Abbrev("PE")
-final public class PrintEventTool extends Tool implements BarrierListener<Integer> {
+@Abbrev("DT")
+final public class DeepTraceTool extends Tool implements BarrierListener<Integer> {
 
 	private static int count = 0;
 	private static String prefixes = "@!#$%*";
@@ -73,7 +73,7 @@ final public class PrintEventTool extends Tool implements BarrierListener<Intege
 
 	private String pads[] = new String[1000];
 
-	public PrintEventTool(String name, Tool next, CommandLine commandLine) {
+	public DeepTraceTool(String name, Tool next, CommandLine commandLine) {
 		super(name, next, commandLine);
 
 		new BarrierMonitor<Integer>(this, new DefaultValue<Object,Integer>() {
