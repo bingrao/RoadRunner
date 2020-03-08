@@ -5,19 +5,14 @@ RR_BUILD_PATH=${RR_PROJECT_PATH}/build
 
 echo "Compiling whole project ..."
 cd $RR_PROJECT_PATH
-ant
+ant build
 cd -
 
-if ! [ -x "$(command -v rrrun)" ]
-then
-  echo 'Error: rrrun command is not added to Path'
-  source ${RR_PROJECT_PATH}/msetup
-fi
-
+source ${RR_PROJECT_PATH}/msetup
 ##################################################################
 
 APP_HOME=`pwd`
-APP_JAR=${APP_HOME}/jar/test.jar
+APP_JAR=${APP_HOME}/build/jar/test.jar
 APP_CLASS="test.Test"
 APP_ARGS=
 RR_TOOL="PE"
