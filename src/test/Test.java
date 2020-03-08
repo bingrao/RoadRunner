@@ -7,7 +7,9 @@ public class Test extends Thread{
     static int y;
 
     public void inc() {
-        y++;
+        synchronized (this) {
+            y++;
+        }
     }
 
     @Override

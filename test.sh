@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PROJECT_PATH=`pwd`
+PROJECT_PATH=/home/bing/workspace/RoadRunner
 BUILD_PATH=${PROJECT_PATH}/build
-LOG_File=${PROJECT_PATH}/log/log.txt
+LOG_File=`pwd`/log/log.txt
 
 TARGET="test.Test"
 TOOL="PE"
@@ -18,7 +18,9 @@ then
   echo "The project is already compiled ..."
 else
   echo "Compiling whole project ..."
+  cd $PROJECT_PATH
   ant
+  cd -
 fi
 
 if ! [ -x "$(command -v rrrun)" ]
